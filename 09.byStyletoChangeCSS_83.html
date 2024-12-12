@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>by Style to Change CSS</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 180px;
+      background-color: pink;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="box">
+
+
+  </div>
+  <script>
+
+    // step1 get ele
+    const box = document.querySelector('.box')
+
+    // step2 
+    box.style.width = '400px';
+    box.style.backgroundColor = 'aqua'
+    box.style.marginTop = '30px'
+    box.style.borderTop = '2px solid red'
+  </script>
+</body>
+
+</html>

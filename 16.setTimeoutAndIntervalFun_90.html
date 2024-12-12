@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>setTimeout and Interval Function</title>
+</head>
+
+<body>
+
+  <script>
+    // 1.open
+    // setInterval(function () {
+    //   console.log(' execute 1 time  in 1s')
+
+    // }, 1000);
+
+    function fn() {
+      console.log(' in 1s fn by ');
+
+    }
+    // setInterval(fn, 1000);//invoke fun的时候 ，without ()
+    // setInterval('fn()', 1000);
+
+    let n = setInterval(fn, 1000);
+    console.log(n);
+
+    let m = setInterval(function () {
+      console.log(' mmmmm');
+
+    }, 2000);
+    console.log(m);
+
+
+    // 2.close
+    clearInterval(m)
+    clearInterval(n)
+
+    let i = 1;
+    setInterval(function () {
+      i++;
+      document.write(`${i}`)
+    }, 1000)
+
+  </script>
+</body>
+
+</html>

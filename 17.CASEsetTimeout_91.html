@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CASE:setTimeout</title>
+</head>
+
+<body>
+  <textarea name="" id="" cols="30" rows="10">
+  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi debitis ratione, dolorum assumenda 
+  adipisci cum sit accusamus! Quia hic quisquam facilis sint facere, deserunt quod rem neque, 
+  consectetur ipsa corporis?Vel eligendi deserunt voluptate porro ipsum recusandae sit, 
+  nulla ullam ea fuga, fugiat iusto officia dolorum sed totam magnam sapiente. Corporis 
+  ipsum repellat accusantium dignissimos ipsa provident porro ipsam nesciunt.
+  Quas commodi minima magni nam ratione beatae fugit hic delectus explicabo in. 
+  Ipsum similique perferendis, praesentium sunt quod, aspernatur incidunt sapiente 
+  perspiciatis pariatur quos optio eum illum earum, magni quas?
+  Rem reiciendis nemo voluptatibus incidunt, sequi repellendus corrupti et sunt velit, 
+  dolore nisi nobis alias similique corporis. Mollitia, fuga. Id exercitationem, eum 
+  eligendi magni tempore officiis similique? Et, possimus velit.
+  Odio maiores error suscipit aperiam esse ducimus perspiciatis qui tempore odit iure eum r
+  epellendus nemo consectetur molestias ut id dolor, nulla, unde, alias rem distinctio 
+  consequatur debitis facilis nostrum! Aperiam.Iste voluptates commodi quos corrupti quaerat 
+ </textarea>
+  <br>
+  <button class="btn" disabled>I have red (60)</button>
+</body>
+
+<script>
+  const btn = document.querySelector('.btn')
+  let i = 6
+  let n = setInterval(function () {
+    i--;
+    btn.innerHTML = `I have red (${i})`
+    if (i === 0) {
+      clearInterval(n);
+      btn.innerHTML = `I have red `
+      btn.disabled = false
+    }
+  }, 1000)
+
+
+
+</script>
+
+</html>

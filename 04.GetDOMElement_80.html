@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get DOM Elements</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">123</div>
+  <div class="box">abc</div>
+  <p id="nav">p-nav</p>
+  <!-- <ul>
+    <li>t1</li>
+    <li>t2</li>
+    <li>t3</li>
+    <li>t4</li>
+  </ul> -->
+
+  // practice
+  <ul class="nav">
+    <li>HomePage</li>
+    <li>Product</li>
+    <li>Contect</li>
+  </ul>
+
+  <script>
+    const box = document.querySelector('.box')
+    // const box = document.querySelector('div')
+    console.log(box);
+
+    // const nav = document.querySelector('#nav')
+    // console.log(nav);
+    // nav.style.color = 'yellow'
+
+    // const li = document.querySelector('ul li:first-child')
+    // console.log(li);
+
+    const allli = document.querySelectorAll('ul li')
+    console.log(allli);
+
+    const navul = document.querySelector('ul');
+    console.log(navul);
+
+    const li1 = document.querySelector('ul li:first-child');
+
+    const li2 = document.querySelector('ul li:nth-child(2)');
+    // const li2 = document.querySelector('ul li:nth-of-type(2)');
+    //     两种方法都可以，但它们有细微的区别：
+    // :nth-child(2) 选择父元素的第二个子元素，且该元素必须是 li
+    // :nth-of-type(2) 选择第二个 li 元素，不管它是父元素的第几个子元素
+    // 在大多数情况下，如果 ul 下只有 li 元素，这两种方法的效果是一样的。不过 :nth-of-type(2) 更专门用于选择特定类型的第二个元素。
+
+    const li3 = document.querySelector('ul li:last-child');
+
+
+
+
+
+  </script>
+</body>
+
+</html>

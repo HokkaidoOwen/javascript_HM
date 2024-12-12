@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Randomly Images</title>
+</head>
+
+<body>
+  <img src="./img/Mt.Lu.jpg" alt="">
+  <script>
+    const arrImg = ['./img/blackCar.jpeg', './img/carAndTree.jpeg',
+      './img/dusk.jpeg', './img/GT4Wfa8XQAAhgws.jpeg',
+      './img/GTqdqhjacAARQ2y.jpeg', './img/GU14GBBaIAA71SB.jpeg',
+      './img/GU18Tkla4AEXzl0.jpeg', './img/GUn3_V8aYAA2bEW.jpeg',
+      './img/GUrltyWbsAAhpU5.jpeg', './img/Mt.LU.jpg']
+
+    let random = Math.floor(Math.random() * arrImg.length);
+    const img = document.querySelector('img');
+    img.src = arrImg[random];
+    img.style.width = '200px'
+  </script>
+</body>
+
+</html>

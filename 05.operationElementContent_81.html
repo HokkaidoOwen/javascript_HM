@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operation of Elements Content</title>
+</head>
+
+<body>
+  <div class="box">silence</div>
+  <script>
+    //step1 get element
+    const box = document.querySelector('.box')
+    //step 2: method1 change content by innerText
+    console.log(box.innerText);
+
+    box.innerText = 'shut up!!!';
+    //box.innerText = '<strong>shut up!!!</strong>';//无法解析tags
+
+    // so .innerHTML
+    // step2 :Method2 change content by .innerHTML
+    console.log(box.innerHTML);
+
+    box.innerHTML = 'Be quiet!';
+    box.innerHTML = "<strong>Be quiet!I don't want hear anything!</strong>";
+
+
+    //
+  </script>
+</body>
+
+</html>

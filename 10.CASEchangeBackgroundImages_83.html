@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CASE Change Background Images</title>
+  <style>
+    /* body {
+      background-image: url('./img/blackCar.jpeg');
+    } */
+
+    boduy {
+      background: url('./images/desptop_1.webp') no-repeat top center/cover;
+    }
+
+    /* body {
+      background-image: url('./images/desptop_1.webp');
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: cover;
+    } */
+
+    /* 这种用斜杠分隔的语法是 CSS 规范中专门为背景图片设置的，
+    允许在一个声明中同时指定位置和大小。这种写法更简洁，
+    但要注意位置值必须在斜杠之前，尺寸值必须在斜杠之后。 */
+
+    /* 居中且完全覆盖 */
+    /* background: url('image.jpg') center/cover;
+
+    /* 左上角且指定尺寸 */
+    /* background: url('image.jpg') left top/300px 200px; */
+
+    /* 右下角且包含完整图片 */
+    /* background: url('image.jpg') right bottom/contain; */
+  </style>
+</head>
+
+<body>
+
+  <script>
+    //myself 
+    const arrImg = ['./img/blackCar.jpeg', './img/carAndTree.jpeg',
+      './img/dusk.jpeg', './img/GT4Wfa8XQAAhgws.jpeg',
+      './img/GTqdqhjacAARQ2y.jpeg', './img/GU14GBBaIAA71SB.jpeg',
+      './img/GU18Tkla4AEXzl0.jpeg', './img/GUn3_V8aYAA2bEW.jpeg',
+      './img/GUrltyWbsAAhpU5.jpeg', './img/Mt.LU.jpg',]
+
+    // let random = Math.floor(Math.random() * arrImg.length)
+
+    // const body = document.querySelector('body');
+
+    // body.style.backgroundImage = `url('${arrImg[random]}')`;
+
+
+    //tacher
+
+    function getRandom(N, M) {
+      return Math.floor(Math.random() * (M - N + 1)) + N;
+    }
+
+    let random = getRandom(1, 10);
+    document.body.style.background = `url('./images/desptop_${random}.webp')`
+
+
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>By classList to Change CSS</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: aqua;
+    }
+
+    .active {
+
+      background-color: darkred;
+      color: orange;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box ">123</div>
+  <script>
+    // step1 get element
+    const box = document.querySelector('.box')
+
+    //step2 change stylesheet by classList
+    //2.1 add
+    // box.classList.add('active');
+    //2.2 delete
+    // box.classList.remove('box');
+    //2.3 switch ：有，就会删掉；没有，就会添加，经常用于点击event
+    box.classList.toggle('active')
+
+
+  </script>
+
+
+</body>
+
+</html>
