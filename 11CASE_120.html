@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CASE</title>
+</head>
+
+<body>
+  <div class="box_bd">
+    <ul class="clearfix">
+      <!-- <li>
+        <a href="#">
+          <img src=${data[i].src} alt="">
+          <h4>
+            ${data[i].title}
+          </h4>
+          <div class="info">
+            <span>高级</span> <span> ${data[i].num}</span>人在学
+          </div>
+        </a>
+      </li> -->
+    </ul>
+  </div>
+  <script>
+    let data = [
+      {
+        src: 'images/course01.png',
+        title: 'Think PHP 5.0',
+        num: 1125
+      },
+      {
+        src: 'images/course02.png',
+        title: 'Python Flask框架',
+        num: 2350
+      },
+      {
+        src: 'images/course03.png',
+        title: 'JavaScript高级开发',
+        num: 1892
+      },
+      {
+        src: 'images/course04.png',
+        title: 'Vue.js全栈开发',
+        num: 3255
+      },
+      {
+        src: 'images/course05.png',
+        title: 'React项目实战',
+        num: 2748
+      },
+      {
+        src: 'images/course06.png',
+        title: 'Node.js开发',
+        num: 1456
+      },
+      {
+        src: 'images/course07.png',
+        title: 'MySQL数据库',
+        num: 986
+      },
+      {
+        src: 'images/course08.png',
+        title: 'Java Web开发',
+        num: 2156
+      },
+      {
+        src: 'images/course09.png',
+        title: 'HTML5+CSS3基础',
+        num: 1752
+      }
+    ];
+    const ul = document.querySelector('ul')
+
+
+    for (let i = 0; i < data.length; i++) {
+      const li = document.createElement('li')
+      //myself
+      // const a = document.createElement('a')
+      // const img = document.createElement('img')
+      // const h4 = document.createElement('h4')
+      // const div = document.createElement('div')
+      // const span = document.createElement('span')
+
+      // img.style.src = data[i].src;
+      // h4.innerHTML = data[i].title;
+      // span.innerHTML = data[i].num;
+
+      // div.appendChild(span)
+      // a.appendChild(img)
+      // a.appendChild(h4)
+      // a.appendChild(div)
+      // li.appendChild(a);
+
+      //teacher
+      li.innerHTML = `
+        <a href="#">
+          <img src=${data[i].src} alt="">
+          <h4>
+            ${data[i].title}
+          </h4>
+          <div class="info">
+            <span>高级</span> <span> ${data[i].num}</span>人在学
+          </div>
+        </a>
+      `
+
+      ul.appendChild(li)
+    }
+
+
+
+  </script>
+</body>
+
+</html>

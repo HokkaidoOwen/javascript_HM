@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CASE</title>
+  <style>
+    .countdown {
+      width: 240px;
+      height: 305px;
+      text-align: center;
+      line-height: 1;
+      background-color: #CC0000;
+      color: #fff;
+      overflow: hidden;
+
+    }
+
+    .countdown .next {
+      font-size: 16px;
+      margin: 25px 0 14px;
+    }
+
+    .countdown .title {
+      font-size: 33px;
+    }
+
+    .countdown .tips {
+      margin-top: 60px;
+      font-size: 23px;
+    }
+
+    .countdown small {
+      font-size: 17px;
+    }
+
+    .countdown .clock {
+      width: 142px;
+      margin: 18px auto 0;
+      overflow: hidden;
+    }
+
+    .countdown .clock span,
+    .countdown .clock i {
+      display: block;
+      text-align: center;
+      line-height: 25px;
+      font-size: 16px;
+      float: left;
+    }
+
+    .countdown .clock span {
+      width: 25px;
+      height: 25px;
+      border-radius: 2px;
+      background-color: #303430;
+    }
+
+    .countdown .clock i {
+      font-style: normal;
+    }
+  </style>
+</head>
+<div class="countdown">
+  <p class="next">Today is </p>
+  <p class="title">Christmas Countdown</p>
+  <p class="clock">
+    <span id="day">00</span>
+    <i>day</i>
+    <span id="hour">00</span>
+    <i>:</i>
+    <span id="minutes">00</span>
+    <i>:</i>
+    <span id="seconds">25</span>
+  </p>
+  <p class="tips">2024-12-25 Christmas</p>
+</div>
+
+<body>
+  <script>
+    // const div = document.querySelector('div')
+    // const chris = +new Date('2024-12-25 00:00:00')
+    // // const date = +new Date();
+    // function countdown() {
+    //   const date = +new Date()
+    //   let lefttime = chris - date;
+
+    //   day = lefttime / 1000 / 60 / 60 / 24;
+    //   h = lefttime / 1000 / 60 / 60;
+    //   m = lefttime / 1000 / 60;
+    //   s = lefttime / 1000 % 60;
+    //   h = h < 10 ? '0' + h : h;
+    //   m = m < 10 ? '0' + m : m;
+    //   s = s < 10 ? '0' + s : s;
+
+    //   return `${day}days ${h}hourse${m} minutes ${s}seconds`
+
+    // }
+
+    // div.innerHTML = countdown()
+
+    // setInterval(function () {
+    //   div.innerHTML = countdown()
+    // }, 1000);
+
+
+    //teacher
+
+
+    // //gpt
+    // const div = document.querySelector('div');
+    // const chris = +new Date('2024-12-25 00:00:00');
+
+    // function countdown() {
+    //   const now = +new Date(); // 当前时间
+    //   let leftTime = chris - now; // 剩余时间（毫秒）
+
+    //   if (leftTime <= 0) {
+    //     // 倒计时结束
+    //     return "Merry Christmas! 🎄";
+    //   }
+
+    //   const days = Math.floor(leftTime / (1000 * 60 * 60 * 24)); // 剩余天数
+    //   leftTime %= 1000 * 60 * 60 * 24; // 去掉整天部分
+
+    //   const hours = Math.floor(leftTime / (1000 * 60 * 60)); // 剩余小时
+    //   leftTime %= 1000 * 60 * 60; // 去掉整小时部分
+
+    //   const minutes = Math.floor(leftTime / (1000 * 60)); // 剩余分钟
+    //   leftTime %= 1000 * 60; // 去掉整分钟部分
+
+    //   const seconds = Math.floor(leftTime / 1000); // 剩余秒数
+
+    //   // 返回格式化的倒计时字符串
+    //   return `${days} days ${hours.toString().padStart(2, '0')} hours ${minutes.toString().padStart(2, '0')} minutes ${seconds.toString().padStart(2, '0')} seconds`;
+    // }
+
+    // // 初始化
+    // div.innerHTML = countdown();
+
+    // // 每秒更新一次
+    // setInterval(function () {
+    //   div.innerHTML = countdown();
+    // }, 1000);
+
+    //m2 chatgpt
+    //     const div = document.querySelector('div');
+    // const chris = +new Date('2024-12-25 00:00:00');
+
+    // function countdown() {
+    //   const now = +new Date(); // 当前时间
+    //   let leftTime = chris - now; // 剩余时间（毫秒）
+
+    //   if (leftTime <= 0) {
+    //     return "Merry Christmas! 🎄";
+    //   }
+
+    //   const days = Math.floor(leftTime / (1000 * 60 * 60 * 24)); // 剩余天数
+    //   const hours = Math.floor((leftTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); // 剩余小时
+    //   const minutes = Math.floor((leftTime % (1000 * 60 * 60)) / (1000 * 60)); // 剩余分钟
+    //   const seconds = Math.floor((leftTime % (1000 * 60)) / 1000); // 剩余秒数
+
+    //   // 返回格式化的倒计时字符串
+    //   return `${days} days ${hours.toString().padStart(2, '0')} hours ${minutes.toString().padStart(2, '0')} minutes ${seconds.toString().padStart(2, '0')} seconds`;
+    // }
+
+    // // 初始化
+    // div.innerHTML = countdown();
+
+    // // 每秒更新一次
+    // setInterval(function () {
+    //   div.innerHTML = countdown();
+    // }, 1000);
+    document.querySelector('.next').innerHTML = `Today is ${new Date().toLocaleDateString()}`
+
+    function getCountTime() {
+      //1. get now 
+      const now = +new Date();
+      console.log(now);
+
+      //2. get last 
+      const last = +new Date('2024-12-25 00:00:00')
+
+      //3.
+      const count = (last - now) / 1000
+
+      //4.
+      let day = parseInt(count / 60 / 60 / 24)
+      let hour = parseInt(count / 60 / 60 % 24)
+      let minutes = parseInt(count / 60 % 60)
+      let second = parseInt(count % 60)
+
+      day = day < 10 ? '0' + day : day
+      hour = hour < 10 ? '0' + hour : hour
+      minutes = minutes < 10 ? '0' + minutes : minutes
+      second = second < 10 ? '0' + second : second
+
+      //5
+      //m1
+      const d = document.querySelector('#day')
+      const h = document.querySelector('#hour')
+      const m = document.querySelector('#minutes')
+      const s = document.querySelector('#seconds')
+
+      d.innerHTML = day;
+      h.innerHTML = hour;
+      m.innerHTML = minutes;
+      s.innerHTML = second;
+
+    }
+
+    getCountTime()
+
+    setInterval(getCountTime, 1000)
+  </script>
+</body>
+
+</html>

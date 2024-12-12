@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Touch Event</title>
+  <style>
+    div {
+      width: 300px;
+      height: 300px;
+      background-color: darkred;
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+  <script>
+    const div = document.querySelector('div')
+    //Mobile Evnets
+    //1.touchstart 2.touchmove 3.touchend
+    div.addEventListener('touchstart', function () {
+      console.log('touchstart');
+    })
+
+    div.addEventListener('touchend', function () {
+      console.log('touchend');
+    })
+
+    div.addEventListener('touchmove', function () {
+      console.log('touchmove');
+    })
+  </script>
+</body>
+
+</html>

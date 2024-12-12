@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+  div {
+    width: 300px;
+    height: 40px;
+    border: 1px solid pink;
+    text-align: center;
+    line-height: 40px;
+  }
+</style>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CASE</title>
+</head>
+
+<body>
+  <div></div>
+
+  <script>
+    // m2 
+    const div = document.querySelector('div')
+    const date = new Date()
+    div.innerHTML = date.toLocaleString(); //12/9/2024, 3:56:00 PM
+    // div.innerHTML = date.toLocaleDateString();//12/9/2024
+    // div.innerHTML = date.toLocaleTimeString();//3:57:37 PM
+    setInterval(function () {
+      const date = new Date()
+      div.innerHTML = date.toLocaleString();
+    }, 1000)
+
+  </script>
+</body>
+
+</html>

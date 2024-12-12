@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clone Node</title>
+</head>
+
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <script>
+    const ul = document.querySelector('ul')
+
+    //1. clone 
+    //m1
+    // const li1 = ul.children[0].cloneNode(true);
+    // console.log(li1);
+    // ul.append(li1);
+
+    //m2 
+    ul.append(ul.children[0].cloneNode(true))
+
+  </script>
+</body>
+
+</html>

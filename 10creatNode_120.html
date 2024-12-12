@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creat Node</title>
+</head>
+
+<body>
+  <ul>
+    <li>big one</li>
+  </ul>
+  <script>
+    const ul = document.querySelector('ul')
+    const li = document.createElement('li')
+    li.innerHTML = 'I am li'
+
+    //追加node m1 as the last one
+    // ul.appendChild(li)
+
+    //追加node m2 before the selected ele 
+    //ul.insertBefore(want to insert node, selected ele)
+    ul.insertBefore(li, ul.children[0])
+
+  </script>
+</body>
+
+</html>

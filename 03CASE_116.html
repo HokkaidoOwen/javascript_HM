@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+  div {
+    width: 300px;
+    height: 40px;
+    border: 1px solid pink;
+    text-align: center;
+    line-height: 40px;
+  }
+</style>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CASE</title>
+</head>
+
+<body>
+  <div></div>
+  <div class="time"></div>
+  <script>
+    // //myself
+    // const div = document.querySelector('div');
+    // const date = new Date();
+    // div.innerHTML = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+
+    // const timeD = document.querySelector('div[class]')
+    // timeD.innerHTML = `now is ${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+    // setInterval(function () {
+    //   const date = new Date();
+    //   timeD.innerHTML = `now is ${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+    // }, 1000);
+
+    // M1 of teacher
+    const div = document.querySelector('div')
+    function getMydate() {
+      const date = new Date()
+      let h = date.getHours()
+      let m = date.getMinutes()
+      let s = date.getSeconds()
+      h = h < 10 ? '0' + h : h;
+      m = m < 10 ? '0' + m : m;
+      s = s < 10 ? '0' + s : s;
+
+      return `Now is ${date.getFullYear()}year${date.getMonth() + 1} month ${date.getDate()}  ${h}:${m}:${s}`;
+    }
+    div.innerHTML = getMydate();
+
+    setInterval(function () {
+      div.innerHTML = getMydate();
+
+    }, 1000);
+
+  </script>
+</body>
+
+</html>
