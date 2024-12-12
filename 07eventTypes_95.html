@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Types</title>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <th>Event Types</th>
+      <th>syntax</th>
+      <th>Example</th>
+
+    </tr>
+    <tr>
+      <td>Mouse Event</td>
+      <td>click ,dbclick ,mouseenter, mouseleave</td>
+      <td>
+        <div>test</div>
+      </td>
+    </tr>
+    <tr>
+      <td>Focus Event</td>
+      <td>focus, blur</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Keyboard Event</td>
+      <td>Keydown,Keyup</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Text Event</td>
+      <td>input</td>
+      <td></td>
+    </tr>
+  </table>
+
+  <script>
+    const div = document.querySelector(' table tr td div')
+    console.log(div)
+    div.addEventListener('mouseenter', function () {
+      div.innerHTML = 'mouseenter---'
+    })
+    div.addEventListener('mouseleave', function () {
+      div.innerHTML = 'mouseleave!!!'
+    })
+  </script>
+</body>
+
+</html>

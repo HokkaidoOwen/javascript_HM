@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>keyborad</title>
+</head>
+
+<body>
+
+  <input type="text">
+  <script>
+    const input = document.querySelector('input')
+    // 1 keyborad event
+    // input.addEventListener('keydown', function () {
+    //   console.log('down');
+
+    // })
+
+    // input.addEventListener('keyup', function () {
+    //   console.log('up');
+
+    // })
+
+    //2.input text event
+    input.addEventListener('input', function () {
+      console.log(input.value);
+
+    })
+  </script>
+</body>
+
+</html>

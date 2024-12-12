@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question</title>
+</head>
+
+<body>
+  <button class="btn">Click</button>
+  <script>
+    const btn = document.querySelector('.btn');
+    const num = 10 //这么写也不报错，
+    // but 如果里面的局部变量去掉了const 变为 全局变量时，就会error
+    btn.addEventListener('click', function () {
+      const num = Math.random()
+      console.log(num);
+
+    })
+  </script>
+</body>
+
+</html>

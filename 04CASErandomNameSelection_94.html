@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CASE Random Name Selection</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .box {
+      width: 600px;
+      margin: 50px auto;
+      display: flex;
+      font-size: 25px;
+      line-height: 40px;
+    }
+
+    .qs {
+      width: 450px;
+      height: 40px;
+      color: red;
+    }
+
+    .btns {
+      text-align: center;
+    }
+
+    .btns button {
+      width: 120px;
+      height: 35px;
+      margin: 0 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2> Random Name Selection</h2>
+  <div class="box">
+    <span>The name is:</span>
+    <div class="qs">there displays name</div>
+  </div>
+  <div class="btns">
+    <button class="start">START</button>
+    <button class="end">END</button>
+  </div>
+
+  <script>
+
+    const arrQ = [
+      'MC', 'HZ', 'ZY', 'GY', 'ZF', 'Owen', 'Biden', 'Trump', 'Elon'
+    ]
+
+    // const question = document.querySelector('.question');
+    // const btnStart = document.querySelector('start');
+    // const btnEnd = document.querySelector('end');
+    // let random = Math.floor(Math.random() * arrQ.length);
+    // // let n = setInterval(function () {
+    // //   question.innerHTML = `the question is:${arrQ[random]}`
+    // // }, 500)
+
+    // // start evnet
+    // btnStart.addEventListener('click', function () {
+    //   let m = setInterval(function () {
+    //     question.innerHTML = `the question is:${arrQ[random]}`;
+    //     let random = Math.floor(Math.random() * arrQ.length);
+    //   }, 500)
+    // })
+
+    // //start event
+    // btnEnd.addEventListener('click', function () {
+    //   clearInterval(n);
+    //   arrQ.splice(random, 1);
+    // })
+
+
+    let timerId = 0;
+    let random = 0;
+
+    //1.  start button part 
+    const qs = document.querySelector('.qs')
+    //get start button
+    const start = document.querySelector('.start');
+    start.addEventListener('click', function () {
+      timerId = setInterval(function () {
+        random = parseInt(Math.random() * arrQ.length)
+        qs.innerHTML = arrQ[random]
+      }, 35)
+
+      if (arrQ.length === 1) {
+        // start.disabled = true
+        // end.disabled = true
+
+        start.disabled = end.disabled = true;
+      }
+    })
+
+    //2. end button part 
+    const end = document.querySelector('.end')
+    end.addEventListener('click', function () {
+      clearInterval(timerId);
+      arrQ.splice(random, 1)
+    })
+
+  </script>
+</body>
+
+</html>

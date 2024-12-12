@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Different Version </title>
+</head>
+
+<body>
+  <button class="btn">click</button>
+  <script>
+    const btn = document.querySelector('.btn')
+
+    // DOM L0
+    // btn.onclick = function () {
+    //   alert(11)
+    // };
+    // btn.onclick = function () {
+    //   alert(22)
+    // };
+
+    btn.addEventListener('click', function () {
+      alert(11)
+    })
+    btn.addEventListener('click', function () {
+      alert(22)
+    })
+  </script>
+</body>
+
+</html>
