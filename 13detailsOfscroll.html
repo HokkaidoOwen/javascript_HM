@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>the details of ScrollTop</title>
+</head>
+
+<body>
+  <div style="height: 1000px;"></div>
+  <div class="xtx-elevator">
+    <ul class="xtx-elevator-list">
+      <li><a href="#" data-name="new">NEW</a></li>
+      <li><a href="#" data-name="popular">POPULAR</a></li>
+      <li><a href="#" data-name="BRAND">BRAND</a></li>
+      <li><a href="#" data-name="TOPIC">TOPIC</a></li>
+      <li><a href="#" id="backTop">TOP</a></li>
+    </ul>
+  </div>
+  <script>
+    // 1, scroll part
+    const entry = document.querySelector('.xtx_entry')
+    const elevator = document.querySelector('.xtx-elevator')
+
+    window.addEventListener('scroll', function () {
+      const n = document.documentElement.scrollTop
+      // m1 
+      // if (n >= 300) {
+      //   elevator.style.opacity = 1
+      // } else {
+      //   elevator.style.opacity = 0
+      // }
+
+      // m2 
+      elevator.style.opacity = n >= 300 ? 1 : 0
+    })
+    //2.click part 
+    const backTop = document.querySelector('#backTop')
+    backTop.addEventListener('click', function () {
+      //m1 
+      // document.documentElement.scrollTop = 0
+
+      // m2 .scrollTo(x,y) y is height
+      window.scrollTo(0, 0)
+    })
+  </script>
+</body>
+
+</html>

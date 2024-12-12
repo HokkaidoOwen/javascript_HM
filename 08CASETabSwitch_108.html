@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tab Switch</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .tab {
+      width: 590px;
+      height: 340px;
+      border: 1px solid #e4e4e4;
+    }
+
+    .tab-nav {
+      width: 100%;
+      height: 60px;
+      line-height: 60px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .tab-nav h3 {
+      font-size: 24px;
+      font-weight: normal;
+      margin-left: 20px;
+    }
+
+    .tab-nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .tab-nav ul li {
+      margin: 0 20px;
+      font-size: 14px;
+    }
+
+    .tab-nav ul li a {
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      color: #333;
+    }
+
+    .tab-nav ul li a.active {
+      border-color: #e1251b;
+      color: #e1251b;
+    }
+
+    .tab-content {
+      padding: 0 16px;
+    }
+
+    .tab-content .item {
+      display: none;
+    }
+
+    .tab-content .item.active {
+      display: block;
+    }
+
+    /* myself  */
+    .tab-content img {
+      width: 574px;
+      height: 280px;
+
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="tab">
+    <div class="tab-nav">
+      <h3>Today's Sales</h3>
+      <ul>
+        <li><a class="active" href=" javascript:;" class="active" data-id="0">精选</a></li>
+        <li><a href="javascript:;" data-id="1">Food</a></li>
+        <li><a href="javascript:;" data-id="2">Department</a></li>
+        <li><a href="javascript:;" data-id="3">个护</a></li>
+        <li><a href="javascript:;" data-id="4">Preview</a></li>
+      </ul>
+    </div>
+    <div class="tab-content">
+      <div class="item active"><img src="./img/blackCar.jpeg" alt=""></div>
+      <div class="item"><img src="./img/carAndTree.jpeg" alt=""></div>
+      <div class="item"><img src="./img/dusk.jpeg" alt=""></div>
+      <div class="item"><img src="./img/GU14GBBaIAA71SB.jpeg" alt=""></div>
+      <div class="item"><img src="./img/GUn3_V8aYAA2bEW.jpeg" alt=""></div>
+    </div>
+  </div>
+  <script>
+    const ul = document.querySelector('.tab-nav ul')
+
+    // m2 下面这一行是M2的时候会用到的
+    const items = document.querySelectorAll('.tab-content .items')
+    ul.addEventListener('click', function (e) {
+      // console.log(e.target);//e.target is the obj we click
+
+      // console.log(e.target.tagName)
+      if (e.target.tagName === 'A') {
+        // console.log('this is A tag');
+
+        document.querySelector('.tab-nav  .active').classList.remove('active')
+
+        // 这里不能用this，因为this指向调用者ul
+        e.target.classList.add('active')
+
+        //针对下面的big box part
+        const id = +e.target.dataset.id;
+        // 用+是为了把字符串变为数字
+
+        // first remove the past 
+        document.querySelector('.tab-content .active').classList.remove('active')
+
+
+        //对应的item 现在有两种方法
+        // M1
+        document.querySelector(`.tab-content .item:nth-child(${id + 1})`).classList.add('active')
+        console.log(document.querySelector('.tab-content .active'))
+      }
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page load event</title>
+  <style>
+    body {
+      padding-top: 100px;
+      height: 3000px;
+    }
+
+    div {
+      display: none;
+      margin: 100px;
+      overflow: scroll;
+      width: 200px;
+      height: 200px;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+    Eos deleniti quas exercitationem earum eveniet itaque,
+    ipsam iusto numquam est autem accusamus. Vitae quaerat
+    qui illo voluptates laborum facilis adipisci culpa?
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+    Quod quam culpa eveniet molestias consequatur, laborum
+    expedita dignissimos molestiae accusamus voluptatum
+    libero architecto, quibusdam eum voluptatem modi ullam illo,
+    rerum at?</div>
+  <script>
+    // window.addEventListener('scroll', function () {
+    //   console.log('scroll');
+
+    // })
+    const div = document.querySelector('div')
+    // div.addEventListener('scroll', function () {
+    //   // div.scrollTop
+    //   console.log(div.scrollTop);
+    // })
+
+    window.addEventListener('scroll', function () {
+      // want to know scrolled distance
+      // document.documentElement
+      // console.log(document.documentElement.scrollTop);
+      const n = document.documentElement.scrollTop
+      if (n >= 100) {
+        div.style.display = 'block'
+      }
+    })
+
+  </script>
+</body>
+
+</html>

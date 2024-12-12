@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pseudo-Class Selector</title>
+  <style>
+    .ck:checked {
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="checkbox" name="" id="" class="ck">
+  <input type="checkbox" name="" id="" class="ck">
+  <input type="checkbox" name="" id="" class="ck">
+  <input type="checkbox" name="" id="" class="ck">
+
+  <script>
+    const cksck = document.querySelectorAll('.ck:checked')
+    console.log(cksck.length);
+
+  </script>
+</body>
+
+</html>

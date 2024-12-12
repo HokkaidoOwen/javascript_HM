@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CASE All Selected</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      border: 1px solid #c0c0c0;
+      width: 500px;
+      margin: 100px auto;
+      text-align: center;
+    }
+
+    th {
+      background-color: #09c;
+      font: bold 16px monospace;
+      height: 24px;
+    }
+
+    td {
+      border: 1px solid #d0d0d0;
+      color: #404060;
+      padding: 10px;
+    }
+
+    .allCheck {
+      width: 80px;
+
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <th class="allcheck">
+        <input type="checkbox" name="" id="checkAll"> <span class="all">All Select</span>
+      </th>
+      <th>Products</th>
+      <th>Vendor</th>
+      <th>Price</th>
+    </tr>
+
+    <tr>
+      <td><input type="checkbox" name="check" class="ck"></td>
+      <td>Mobile</td>
+      <td>XM</td>
+      <td>$199</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="check" class="ck"></td>
+      <td>Water Filter</td>
+      <td>XM</td>
+      <td>$499</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="check" class="ck"></td>
+      <td>TV</td>
+      <td>XM</td>
+      <td>$599</td>
+    </tr>
+  </table>
+  <script>
+    //1. get the big checkbox 
+    const checkAll = document.querySelector('#checkAll');
+    console.log(checkAll);
+
+    //2. get all the small checkbox .ck
+    const cks = document.querySelectorAll('.ck')
+    console.log(cks);
+
+    //3. add click event
+    checkAll.addEventListener('click', function () {
+      // console.log(checkAll.checked);
+      //4把 大复选框的状态传给小复选框
+      for (let i = 0; i < cks.length; i++) {
+        cks[i].checked = checkAll.checked
+      }
+
+
+    })
+
+    //5
+    // myself
+    // const cks = document.querySelectorAll('.ck')
+    // const checkAll = document.querySelector('#checkAll')
+    // for (let i = 0; i < cks.length; i++) {
+    //   cks[i].addEventListener('click', function () {
+    //     let ckNum = document.querySelectorAll('.ck:checked')
+    //     if (ckNum.length === cks.length || ckNum === 0) {
+    //       checkAll.checked = cks[0].checked
+    //     }
+    //   })
+    // }
+
+    // checkAll.addEventListener('click', function () {
+    //   for (let i = 0; i < cks.length; I++) {
+    //     cks[i].checked = checkAll.checked
+    //   }
+    // })
+
+    //5 let small boxcheck controll big checkbox
+    for (let i = 0; i < cks.length; i++) {
+      //5.1 set event to small checkbox
+      cks[i].addEventListener('click', function () {
+        //judge：the num of checked small checkbox is equal to  the length of cks
+        // console.log(document.querySelectorAll('.ck:checked ').length);
+        // console.log(document.querySelectorAll('.ck:checked ').length === cks.length);
+        checkAll.checked = document.querySelectorAll('.ck:checked ').length === cks.length;
+      })
+    }
+
+  </script>
+</body>
+
+</html>
